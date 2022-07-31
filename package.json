@@ -1,12 +1,12 @@
 {
   "name": "skunk-works",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Session Replay tool for self hosted instances",
   "main": "dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "release": "bumpp --commit --push --tag && npm publish dist"
+    "release": "bumpp --commit --push --tag && npm publish"
   },
   "author": "seanwessmith",
   "license": "MIT",
