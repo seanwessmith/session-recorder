@@ -1,77 +1,26 @@
 {
-  "name": "session-recorder",
-  "version": "1.1.1",
-  "description": "Record every movement in web",
+  "name": "skunk-works",
+  "version": "0.0.3",
+  "description": "Session Replay tool for self hosted instances",
   "main": "dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "lint": "npx tslint src/**/*",
-    "dev": "npx webpack-dev-server --inline --config build/dev.js",
-    "prebuild": "npm run lint && rimraf dist",
-    "commit": "npx git-cz",
-    "build": "npx tsc",
-    "release": "npm run build && git add .&& npx release-it"
+    "build": "rollup -c rollup.config.js",
+    "release": "bumpp --commit --push --tag && npm publish dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:waynecz/session-recorder.git"
-  },
-  "keywords": [
-    "feedback",
-    "heatmap",
-    "analysis",
-    "uirecord"
-  ],
-  "files": [
-    "dist"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "lint-staged": {
-    "*.ts*": [
-      "npm run lint"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "author": "waynecz <451578533@qq.com>",
+  "author": "seanwessmith",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^7.3.2",
-    "@commitlint/config-conventional": "^7.3.1",
-    "awesome-typescript-loader": "^5.2.1",
-    "commitizen": "^3.0.5",
-    "copy-webpack-plugin": "^4.5.2",
-    "css-loader": "^0.28.10",
-    "cz-conventional-changelog": "^2.1.0",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.0",
-    "node-sass": "^4.7.2",
-    "prettier": "^1.14.3",
-    "release-it": "^10.0.1",
-    "rimraf": "^2.6.3",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0",
-    "tslint-config-standard": "^8.0.1",
-    "tslint-loader": "^3.6.0",
-    "tslint-plugin-prettier": "^2.0.0",
-    "typescript": "^3.1.3",
-    "uglifyjs-webpack-plugin": "^2.0.0",
-    "webpack": "^4.19.0",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.9",
-    "webpack-merge": "^4.1.4"
+    "bumpp": "^8.2.1",
+    "rollup": "^2.77.2",
+    "rollup-plugin-ts": "^3.0.2",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "dts-bundle": "^0.7.3"
-  }
+    "@msgpack/msgpack": "^2.7.2"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ]
 }
