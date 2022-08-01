@@ -1,6 +1,6 @@
 {
   "name": "skunk-works",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Session Replay tool for self hosted instances",
   "main": "dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -19,5 +19,8 @@
   "files": [
     "dist/index.js",
     "dist/index.d.ts"
-  ]
+  ],
+  "dependencies": {
+    "@msgpack/msgpack": "^2.7.2"
+  }
 }
